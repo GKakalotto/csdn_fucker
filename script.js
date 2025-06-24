@@ -13,6 +13,8 @@ document.addEventListener('keydown', function(event) {
 });
 
 let cnt = document.getElementById("content_views");
-cnt.addEventListener('copy', function(event) {
-    CopyToClipboard();
-});
+if (cnt != null) {
+    cnt.addEventListener('copy', function(event) {
+        CopyToClipboard();
+    });
+}

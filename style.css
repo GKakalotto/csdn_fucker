@@ -56,3 +56,11 @@ div:has(.csdn-side-toolbar) {
 body {
     background: unset!important;
 }
+
+/* Removes elements that affect browsing pages */
+button.btn-code-notes,
+.swiper-slide-box-remuneration,
+#toolbarBox,
+#articleSearchTip {
+    display: none!important;
+}
