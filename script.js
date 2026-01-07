@@ -12,9 +12,14 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-let cnt = document.getElementById("content_views");
-if (cnt != null) {
-    cnt.addEventListener('copy', function(event) {
-        CopyToClipboard();
-    });
-}
+let cnt = null;
+let timer = setInterval(() => {
+    cnt = document.getElementById("content_views");
+    if (cnt != null) {
+        cnt.addEventListener('copy', function(event) {
+            CopyToClipboard();
+        });
+
+        clearInterval(timer);
+    }
+}, 10);
