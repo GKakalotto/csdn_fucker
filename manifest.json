@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "CSDN Fucker",
-    "description": "Allow copying CSDN text and code without logging in.",
-    "version": "26.1.1",
+    "description": "一个 CSDN 辅助工具，无需登录即可复制内容，并且页面更加清爽。",
+    "version": "26.1.2",
     "content_scripts": [
         {
             "matches": [

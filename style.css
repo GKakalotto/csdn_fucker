@@ -1,66 +1,49 @@
 /* Allow mouse to select content */
 pre, pre > code, #content_views {
-    user-select: unset!important;
+    user-select: unset !important;
 }
 
-/* Hide the "登录复制" button */
-main div.blog-content-box pre .hljs-button.active {
-    display: none!important;
+/* 隐藏各类干扰元素（登录复制、广告、工具栏等） */
+#recommendAdBox,
+#toolbarBox,
+#articleSearchTip,
+.btn-code-notes::after,
+.hide-preCode-box,
+.opt-box > button,
+.opt-box > div,
+.opt-box > .code-run-btn,
+.passport-login-container,
+.passport-login-tip-container,
+.rightside-fixed-hide,
+.tool-active-list,
+.gitcode-quick-app,
+.swiper-slide-box-remuneration,
+div.hide-article-box,
+div:has(.csdn-side-toolbar) {
+    display: none !important;
+    visibility: hidden !important;
 }
 
 /* Code auto-expansion */
-main div.blog-content-box pre.set-code-hide {
-    height: unset!important;
-}
-
+main div.blog-content-box pre.set-code-hide,
 main div.blog-content-box pre {
-    max-height: unset!important;
-}
-
-.hide-preCode-box {
-    display: none;
+    height: unset !important;
+    max-height: unset !important;
 }
 
 /* Remove the restriction of "关注博主即可阅读全文" */
 #article_content {
-    height: unset!important;
-    overflow: unset!important;
+    height: unset !important;
+    overflow: unset !important;
 }
 
-div.hide-article-box {
-    display: none;
-}
-
-/* Remove the background image */
+/* 移除背景图片、样式，简化界面 */
 .ai-abstract {
-    background-image: unset!important;
+    background-image: unset !important;
     border: 1px wheat solid;
 }
 
-aside div.aside-box h3.aside-title {
-    background: unset!important;
-}
-
-.passport-login-container,
-.rightside-fixed-hide,
-.passport-login-tip-container,
-.tool-active-list,
-#recommendAdBox {
-    display: none!important;
-}
-
-div:has(.csdn-side-toolbar) {
-    display: none!important;
-}
-
+aside div.aside-box h3.aside-title,
 body {
-    background: unset!important;
-}
-
-/* Removes elements that affect browsing pages */
-button.btn-code-notes,
-.swiper-slide-box-remuneration,
-#toolbarBox,
-#articleSearchTip {
-    display: none!important;
+    background: unset !important;
 }
