@@ -2,7 +2,12 @@
     "manifest_version": 3,
     "name": "CSDN Fucker",
     "description": "一个 CSDN 辅助工具，无需登录即可复制内容，并且页面更加清爽。",
-    "version": "26.1.2",
+    "version": "26.5.28",
+    "icons": {
+        "16": "image/app.png",
+        "48": "image/app.png",
+        "64": "image/app.png"
+    },
     "content_scripts": [
         {
             "matches": [

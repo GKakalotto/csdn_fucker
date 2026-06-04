@@ -39,6 +39,7 @@ main div.blog-content-box pre {
 
 /* 移除背景图片、样式，简化界面 */
 .ai-abstract {
+    background-color: unset !important;
     background-image: unset !important;
     border: 1px wheat solid;
 }
