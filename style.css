@@ -15,11 +15,14 @@ pre, pre > code, #content_views {
 .passport-login-container,
 .passport-login-tip-container,
 .rightside-fixed-hide,
+.simple-ad-slot__fixed,
 .tool-active-list,
+.toolbar-btns.onlyUser,
 .gitcode-quick-app,
 .swiper-slide-box-remuneration,
 div.hide-article-box,
-div:has(.csdn-side-toolbar) {
+div:has(.csdn-side-toolbar),
+div#swiper-remuneration-container {
     display: none !important;
     visibility: hidden !important;
 }
@@ -38,13 +41,23 @@ main div.blog-content-box pre {
 }
 
 /* 移除背景图片、样式，简化界面 */
+main::before,
 .ai-abstract {
     background-color: unset !important;
     background-image: unset !important;
     border: 1px wheat solid;
 }
 
+.simple-column-page .simple-blue-card,
 aside div.aside-box h3.aside-title,
 body {
     background: unset !important;
+}
+
+.simple-ad-slot-right {
+    visibility: hidden;
+}
+
+.blog-content-box.simple-article-box {
+    margin-top: 40px;
 }
