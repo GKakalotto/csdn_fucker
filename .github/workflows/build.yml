@@ -1,0 +1,38 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 从 manifest.json 读取版本号，供后续 zip 文件名与 release 标签使用
+      - name: Get version from manifest.json
+        id: version
+        run: echo "version=$(jq -r .version manifest.json)" >> "$GITHUB_OUTPUT"
+
+      # 打包项目为 zip，排除 .git 等 git 相关内容与 CI 配置
+      - name: Package project as zip
+        run: |
+          zip -r "csdn_fucker_v${{ steps.version.outputs.version }}.zip" . \
+            -x ".git/*" ".github/*" ".gitignore" "*.git*"
+
+      # 推送到 main 时自动创建/更新 release，并上传 zip 产物
+      # 注意：每次发版请升级 manifest.json 里的 version，否则 tag 已存在会失败
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          files: csdn_fucker_v${{ steps.version.outputs.version }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
