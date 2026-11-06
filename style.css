@@ -7,6 +7,9 @@ pre, pre > code, #content_views {
 #recommendAdBox,
 #toolbarBox,
 #articleSearchTip,
+.aigc-blog-detail,
+.article-lock-overlay,
+.blog-footer-bottom,
 .btn-code-notes::after,
 .hide-preCode-box,
 .opt-box > button,
@@ -16,12 +19,15 @@ pre, pre > code, #content_views {
 .passport-login-tip-container,
 .rightside-fixed-hide,
 .simple-ad-slot__fixed,
+.t2-card-container.show,
 .tool-active-list,
 .toolbar-btns.onlyUser,
 .gitcode-quick-app,
 .swiper-slide-box-remuneration,
 div.hide-article-box,
 div:has(.csdn-side-toolbar),
+div#mainBox::-webkit-scrollbar,
+div#rightAside,
 div#swiper-remuneration-container {
     display: none !important;
     visibility: hidden !important;
@@ -60,4 +66,9 @@ body {
 
 .blog-content-box.simple-article-box {
     margin-top: 40px;
+}
+
+div#mainBox {
+    width: unset !important;
+    overflow-x: unset !important;
 }
